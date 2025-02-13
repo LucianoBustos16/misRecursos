@@ -5,7 +5,7 @@ const { nombreCorto, id, wordmark } = Astro.props;
 const svgPath = `/logos/bancos/${wordmark}.svg`;
 ---
 
-<article class="link-card w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+<article class="link-card w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-neutral-800 dark:border-neutral-700">
   <div class="flex flex-col items-center p-10">
     <img class="w-12 h-12 mb-3 rounded-full shadow-lg" src={svgPath} alt={`Logo de ${nombreCorto}`} />
     <h5 class="card-title mb-1 text-xl font-medium text-gray-900 dark:text-white">{nombreCorto}</h5>
