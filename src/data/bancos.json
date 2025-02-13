@@ -1,0 +1,247 @@
+[
+    {
+      "id": "00007",
+      "banco": "BANCO DE GALICIA Y BUENOS AIRES S.A",
+      "nombreCorto": "Galicia",
+      "wordmark": "galicia"
+    },
+    {
+        "id": "00011",
+        "banco": "BANCO DE LA NACION ARGENTINA",
+        "nombreCorto": "Banco Nación",
+        "wordmark": "banco-nacion"
+      },
+      {
+        "id": "00014",
+        "banco": "BANCO DE LA PROVINCIA DE BUENOS AIRES",
+        "nombreCorto": "Banco Provincia",
+        "wordmark": "banco-provincia"
+      },
+      {
+        "id": "00016",
+        "banco": "CITIBANK N.A.",
+        "nombreCorto": "Citibank",
+        "wordmark": "citibank"
+      }
+      ,
+      {
+        "id": "00017",
+        "banco": "BANCO BBVA ARGENTINA S.A.",
+        "nombreCorto": "BBVA",
+        "wordmark": "bbva"
+      },
+      {
+        "id": "00020",
+        "banco": "BANCO DE LA PROVINCIA DE CORDOBA S.A.",
+        "nombreCorto": "Bancor",
+        "wordmark": "bancor"
+      }
+      ,
+      {
+        "id": "00027",
+        "banco": "BANCO SUPERVIELLE S.A.",
+        "nombreCorto": "Supervielle",
+        "wordmark": "supervielle"
+      }
+      ,
+      {
+        "id": "00029",
+        "banco": "BANCO DE LA CIUDAD DE BUENOS AIRES",
+        "nombreCorto": "Banco Ciudad",
+        "wordmark": "banco-ciudad"
+      }
+      ,
+      {
+        "id": "00034",
+        "banco": "BANCO PATAGONIA S.A.",
+        "nombreCorto": "Patagonia",
+        "wordmark": "patagonia"
+      }  ,
+      {
+        "id": "00044",
+        "banco": "BANCO HIPOTECARIO S.A.",
+        "nombreCorto": "Hipotecario",
+        "wordmark": "hipotecario"
+      },
+      {
+        "id": "00045",
+        "banco": "BANCO DE SAN JUAN S.A.",
+        "nombreCorto": "Banco San Juan",
+        "wordmark": "banco-san-juan"
+      },
+      {
+        "id": "00065",
+        "banco": "BANCO MUNICIPAL DE ROSARIO",
+        "nombreCorto": "Banco Municipal",
+        "wordmark": "banco-municipal"
+      },
+      {
+        "id": "00072",
+        "banco": "BANCO SANTANDER ARGENTINA S.A.",
+        "nombreCorto": "Santander",
+        "wordmark": "santander"
+      },
+      {
+        "id": "00083",
+        "banco": "BANCO DEL CHUBUT S.A.",
+        "nombreCorto": "Banco del Chubut",
+        "wordmark": "banco-del-chubut"
+      },
+      {
+        "id": "00086",
+        "banco": "BANCO DE SANTA CRUZ S.A.",
+        "nombreCorto": "Santa Cruz",
+        "wordmark": "santa-cruz"
+      },
+      {
+        "id": "00094",
+        "banco": "BANCO DE CORRIENTES S.A.",
+        "nombreCorto": "Banco de Corrientes",
+        "wordmark": "banco-de-corrientes"
+      },
+      {
+        "id": "00097",
+        "banco": "BANCO PROVINCIA DEL NEUQUÉN SOCIEDAD ANÓ",
+        "nombreCorto": "Banco Provincia del Neuquen",
+        "wordmark": "banco-provincia-del-neuquen"
+      },
+      {
+        "id": "00143",
+        "banco": "BRUBANK S.A.U.",
+        "nombreCorto": "Brubank",
+        "wordmark": "brubank"
+      },
+      {
+        "id": "00150",
+        "banco": "HSBC BANK ARGENTINA S.A.",
+        "nombreCorto": "HSBC",
+        "wordmark": "hsbc"
+      },
+      {
+        "id": "00191",
+        "banco": "BANCO CREDICOOP COOPERATIVO LIMITADO",
+        "nombreCorto": "Credicoop",
+        "wordmark": "credicoop"
+      },
+      {
+        "id": "00247",
+        "banco": "BANCO ROELA S.A.",
+        "nombreCorto": "Roela",
+        "wordmark": "roela"
+      },
+      {
+        "id": "00259",
+        "banco": "BANCO BMA S.A.U.",
+        "nombreCorto": "Macro BMA",
+        "wordmark": "macro-bma"
+      },
+      {
+        "id": "00277",
+        "banco": "BANCO SAENZ S.A.",
+        "nombreCorto": "Banco Saenz",
+        "wordmark": "banco-saenz"
+      },
+      {
+        "id": "00281",
+        "banco": "BANCO MERIDIAN S.A.",
+        "nombreCorto": "Banco Meridian",
+        "wordmark": "banco-meridian"
+      },
+      {
+        "id": "00285",
+        "banco": "BANCO MACRO S.A.",
+        "nombreCorto": "Macro",
+        "wordmark": "macro"
+      },
+      {
+        "id": "00299",
+        "banco": "BANCO COMAFI SOCIEDAD ANONIMA",
+        "nombreCorto": "Comafi",
+        "wordmark": "comafi"
+      },
+      {
+        "id": "00301",
+        "banco": "BANCO PIANO S.A.",
+        "nombreCorto": "Banco Piano",
+        "wordmark": "banco-piano"
+      },
+      {
+        "id": "00309",
+        "banco": "BANCO RIOJA SOCIEDAD ANONIMA UNIPERSONAL",
+        "nombreCorto": "Banco Rioja",
+        "wordmark": "banco-rioja"
+      },
+      {
+        "id": "00310",
+        "banco": "BANCO DEL SOL S.A.",
+        "nombreCorto": "Banco del Sol",
+        "wordmark": "banco-del-sol"
+      },
+      {
+        "id": "00311",
+        "banco": "NUEVO BANCO DEL CHACO S. A.",
+        "nombreCorto": "Nuevo Banco del Chaco",
+        "wordmark": "nuevo-banco-del-chaco"
+      },
+      {
+        "id": "00315",
+        "banco": "BANCO DE FORMOSA S.A.",
+        "nombreCorto": "Banco de Formosa",
+        "wordmark": "banco-de-formosa"
+      },
+      {
+        "id": "00322",
+        "banco": "BANCO INDUSTRIAL S.A.",
+        "nombreCorto": "Banco Industrial",
+        "wordmark": "banco-industrial"
+      },
+      {
+        "id": "00330",
+        "banco": "NUEVO BANCO DE SANTA FE SOCIEDAD ANONIMA",
+        "nombreCorto": "Santa Fe",
+        "wordmark": "santa-fe"
+      },
+      {
+        "id": "00384",
+        "banco": "WILOBANK S.A.U.",
+        "nombreCorto": "Wilobank",
+        "wordmark": "wilobank"
+      },
+      {
+        "id": "00386",
+        "banco": "NUEVO BANCO DE ENTRE RÍOS S.A.",
+        "nombreCorto": "Entre Rios",
+        "wordmark": "entre-rios"
+      } ,
+      {
+        "id": "00389",
+        "banco": "BANCO COLUMBIA S.A.",
+        "nombreCorto": "Banco Columbia",
+        "wordmark": "banco-columbia"
+      } ,
+      {
+        "id": "00426",
+        "banco": "BANCO BICA S.A.",
+        "nombreCorto": "Banco Bica",
+        "wordmark": "banco-bica"
+      }  ,
+      {
+        "id": "00448",
+        "banco": "BANCO DINO S.A.",
+        "nombreCorto": "Banco Dino",
+        "wordmark": "banco-dino"
+      } ,
+      {
+        "id": "45030",
+        "banco": "NARANJA DIGITAL COMPAÑÍA FINANCIERA S.A.",
+        "nombreCorto": "Naranja X",
+        "wordmark": "naranja-x"
+      }  ,
+      {
+        "id": "45072",
+        "banco": "REBA COMPAÑIA FINANCIERA S.A.",
+        "nombreCorto": "Reba",
+        "wordmark": "reba"
+      }     
+
+]

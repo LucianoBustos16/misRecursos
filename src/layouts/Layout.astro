@@ -1,14 +1,24 @@
+---
+import Toast from "../components/ui/Toast.astro";
+import "../styles/global.css";
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>Astro Basics</title>
 	</head>
 	<body>
-		<slot />
+		<div class="antialiased bg-gray-50 dark:bg-gray-900">
+			<main class="p-4 min-h-screen pt-20">
+				<slot />
+			</main>
+		</div>
+
 	</body>
 </html>
 
