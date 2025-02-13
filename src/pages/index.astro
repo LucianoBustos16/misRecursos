@@ -8,26 +8,7 @@ import EmptyState from '../components/ui/EmptyState.astro';
 ---
 
 <Layout>
-	
-	
-
-	<Search/>
-
-	<EmptyState/>
-
-	<section class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6" id="card-list">
-
-		{data.map(({ id, banco, nombreCorto, wordmark}) => (
-			<CardBank
-			id={id}
-			banco={banco}
-			nombreCorto={nombreCorto}
-			wordmark={wordmark}
-			/>
-		))}
 
 
-		
-	</section>
 	
 </Layout>
