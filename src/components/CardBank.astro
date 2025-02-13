@@ -2,7 +2,7 @@
 import Icons from "../icons/Icons.astro";
 
 const { nombreCorto, id, wordmark } = Astro.props;
-const svgPath = `/src/assets/logos/bancos/${wordmark}.svg`;
+const svgPath = `/logos/bancos/${wordmark}.svg`;
 ---
 
 <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
@@ -27,7 +27,7 @@ const svgPath = `/src/assets/logos/bancos/${wordmark}.svg`;
     document.querySelectorAll(".copy-btn").forEach(button => {
       button.addEventListener("click", async () => {
         const wordmark = button.getAttribute("data-link");
-        const svgUrl = `/src/assets/logos/bancos/${wordmark}.svg`;
+        const svgUrl = `/logos/bancos/${wordmark}.svg`;
 
         try {
           const response = await fetch(svgUrl);
