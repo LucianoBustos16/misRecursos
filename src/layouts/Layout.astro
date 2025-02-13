@@ -18,7 +18,38 @@ import "../styles/global.css";
 				<slot />
 			</main>
 		</div>
-
+		<script is:inline>
+			const cardList = document.getElementById("card-list"); // Obtener la lista de tarjetas
+			const searchInput = document.getElementById("search-bar"); // Obtener el campo de búsqueda
+			const noResultsMessage = document.getElementById("no-results");
+		
+			searchInput.addEventListener("input", function (event) {
+			  const searchTerm = event.target.value.toLowerCase(); // Obtener el término de búsqueda en minúsculas
+			  let hasResults = false;
+			  
+			  // Iterar a través de las tarjetas y mostrar/ocultar según el término de búsqueda
+			  cardList.querySelectorAll(".link-card").forEach((card) => {
+				  const title = card
+				  .querySelector(".card-title")
+				  .textContent.toLowerCase();
+				const body = card.querySelector(".card-body").textContent.toLowerCase();
+		
+				if (title.includes(searchTerm) || body.includes(searchTerm)) {
+				  card.style.display = "block";
+				  hasResults = true;
+				} else {
+				  card.style.display = "none";
+				}
+			  });
+			  // Mostrar u ocultar el mensaje de no resultados
+			  if (hasResults) {
+				noResultsMessage.style.display = "none";
+			  } else {
+				noResultsMessage.style.display = "block";
+			  }
+			});
+		
+		</script>
 	</body>
 </html>
 
