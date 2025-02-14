@@ -4,6 +4,7 @@ import data from '../data/bancos.json';
 import CardBank from '../components/CardBank.astro';
 import Search from '../components/Search.astro';
 import EmptyState from '../components/ui/EmptyState.astro';
+import Toast from '../components/ui/Toast.astro';
 
 ---
 
@@ -24,6 +25,7 @@ import EmptyState from '../components/ui/EmptyState.astro';
 			  />
 		  ))}
   
+  <div id="toast-container" class="fixed top-4 right-4 z-50"></div>
   
 		  
 	  </section>
