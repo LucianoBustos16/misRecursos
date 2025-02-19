@@ -8,6 +8,15 @@
     "dist"
   ],
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@components/*": ["src/components/*"],
+      "@icons/*": ["src/components/ui/icons/*"],
+      "@data/*": ["src/data/*"],
+      "@layouts/*": ["src/layouts/*"],
+      
+    },
     "jsx": "react-jsx",
     "jsxImportSource": "react"
   }

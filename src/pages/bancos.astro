@@ -1,10 +1,9 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import data from '../data/bancos.json';
-import CardBank from '../components/CardBank.astro';
-import Search from '../components/Search.astro';
-import EmptyState from '../components/ui/EmptyState.astro';
-import Toast from '../components/ui/Toast.astro';
+import Layout from '@layouts/Layout.astro';
+import data from '@data/bancos.json';
+import CardBank from '@components/CardBank.astro';
+import Search from '@components/Search.astro';
+import EmptyState from '@components/ui/EmptyState.astro';
 
 ---
 
@@ -14,7 +13,7 @@ import Toast from '../components/ui/Toast.astro';
   
 	  <EmptyState/>
   
-	  <section class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6" id="card-list">
+	  <section class="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6" id="card-list">
   
 		  {data.map(({ id, banco, nombreCorto, wordmark}) => (
 			  <CardBank
