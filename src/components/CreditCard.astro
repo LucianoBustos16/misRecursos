@@ -1,0 +1,34 @@
+---
+
+const { logoColor } = Astro.props;
+
+---
+
+
+    <div id="main-credit-card" class="aspect-[1.586/1] relative w-full max-w-sm rounded-xl shadow-2xl p-6 text-white overflow-hidden transform transition-transform duration-300 ease-in-out" style={`background-color: ${logoColor};`}>
+        <div class="absolute -top-4 -right-20">
+            
+        </div>
+
+        <div class="relative z-10 flex justify-between items-start mb-6">
+
+            
+            <div class="card-brand-logo">
+                <p>VISA</p>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+
+<style>
+        /* Estilo para el logo de la marca de la tarjeta (opcional, si no usas una imagen SVG) */
+        .card-brand-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+    </style>

@@ -1,0 +1,30 @@
+[
+    {
+        "Producto":{
+            "ClaseId": "S000C",
+            "Id": "Z",
+            "SubproductoId": 2,
+            "SubproductoNombre": "Cordobesa débito MasterCard"
+        },
+        "Estilos":{
+            "Font": "#022321",
+            "Background": "#CFCDBA",
+            "Isologo": "#D9D8C8",
+            "logoCordobesa": "Color"
+        }
+    },
+    {
+        "Producto":{
+            "ClaseId": "S000C",
+            "Id": "Z",
+            "SubproductoId": 1,
+            "SubproductoNombre": "Cordobesa MasterCard Internacional"
+        },
+        "Estilos":{
+            "Font": "#FFF",
+            "Background": "#005F5A",
+            "Isologo": "#20736F",
+            "logoCordobesa": "Negativo"
+        }
+    }
+]

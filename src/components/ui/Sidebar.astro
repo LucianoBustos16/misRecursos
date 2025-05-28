@@ -10,13 +10,19 @@ const items: { label: string; link: string; icon: keyof typeof iconPaths; active
 		label: 'Inicio',
     link: '/',
     icon: 'home'
-	},   
+  },   
    {
-		label: 'Logos',
+    label: 'Logos',
       link: '/bancos',
       icon:'rocket'
-	}
-]
+  }
+  ,   
+   {
+    label: 'Cards',
+      link: '/cards',
+      icon:'cedit-card'
+  }
+  ]
 
 
 const pages = items.map((page) => ({
@@ -54,7 +60,7 @@ const pages = items.map((page) => ({
           <li>
             <a href={link}
             class:list={[
-                  { "current-page active": active}, "flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group",
+                  { "current-page active": active}, "flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-brand-700/9 group",
                 ]}
                 >
               <Icons icon={icon} size="18"/>
