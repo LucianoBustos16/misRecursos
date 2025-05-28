@@ -1,96 +1,115 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import listCard from '@data/cards.json';
-import CreditCard from '@components/CreditCard.astro';
+import creditCards from '@data/cards.json';
+import CreditCardReact from '../components/CreditCard';// React version
 
 import Icons from "@icons/Icons.astro";
-
-
 ---
 
 <Layout>
-
-<header class="mb-8">
+  <header class="mb-8">
     <h1 class="text-2xl font-bold dark:text-white">Cards</h1>
-    <p class="text-sm text-gray-500 dark:text-gray-400">Lista de tarjetas con sus estilos.</p>
-</header>
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      Lista de tarjetas con sus estilos.
+    </p>
+  </header>
 
-
-
-<section id="card-container" class="mb-8">
-    <CreditCard
-        cardType="visa"
-        cardNumber="1234 5678 9012 3456"
-        cardHolder="John Doe"
-        expirationDate="12/25"
-        backgroundColor="#1A1A1A"
-        textColor="#FFFFFF"
-        logoColor="#FFCC00"
+  <section  id="card-container" class="mb-8">
+    <CreditCardReact
+    cardType="visa"
+    cardNumber="1234 5678 9012 3456"
+    cardHolder="John Doe"
+    expirationDate="12/25"
+    backgroundColor="#1A1A1A"
+    textColor="#FFFFFF"
+    logoColor="#FFCC00"
+    logoCordobesa="Negativo"
+    client:visible
     />
-</section>
+  </section>
 
-    <ul class="grid grid-autofill gap-4">
-        {listCard.map((producto) => (
-            <article class="credit-card-selector border p-3 flex flex-col gap-2 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700"
-            data-background={producto.Estilos.Background}
-            data-text={producto.Estilos.Font}
-            data-logo={producto.Estilos.Isologo}>
-                <header class="flex">
-                    <span class=" text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm bg-[#CBED94] text-black">
-                        {producto.Producto.Id}{producto.Producto.SubproductoId}
-                    </span>        
-                    <h2 class="dark:text-white font-bold">{producto.Producto.SubproductoNombre}</h2>
-                </header>
-                
-                <div class="flex -space-x-4 rtl:space-x-reverse">
-                        <div class="w-10 h-10 border-2 border-white rounded-full dark:border-gray-800" style={{backgroundColor: producto.Estilos.Background }}></div>
-                        <div class="w-10 h-10 border-2 border-white rounded-full dark:border-gray-800" style={{backgroundColor: producto.Estilos.Isologo }}></div>
-                </div>
+  <ul class="grid grid-autofill gap-4" id="cards-list">
+    {creditCards.map((producto, index) => (
+      <article
+        class="credit-card-selector border p-3 flex flex-col gap-2 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700"
+        data-index={index}
+        data-background={producto.Estilos.Background}
+        data-text={producto.Estilos.Font}
+        data-logo={producto.Estilos.Isologo}
+        data-cordobesa={producto.Estilos.logoCordobesa}
+      >
+        <header class="flex">
+          <span class="text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm bg-[#CBED94] text-black">
+            {producto.Producto.Id}{producto.Producto.SubproductoId}
+          </span>
+          <h2 class="dark:text-white font-bold">
+            {producto.Producto.SubproductoNombre}
+          </h2>
+        </header>
 
-                <footer class="flex gap-2 justify-between">
-                    <div class="flex dark:text-white">
-                    <Icons icon="typo" size="24"/>
-                    <div class="flex flex-col" >
-                        <span class="text-sm ms-2 opacity-50">Font Color</span>
-                        <span class="text-md font-medium ms-2">{producto.Estilos.Font}</span>
-                    </div>
-                </div>
-                <div class="flex dark:text-white">
-                    <Icons icon="fill" size="24"/>
-                    <div class="flex flex-col" >
-                        <span class="text-sm ms-2 opacity-50">Logo cordobesa</span>
-                        <span class="text-md font-medium ms-2">{producto.Estilos.logoCordobesa}</span>
-                    </div>
-                </div>
+        <div class="flex -space-x-4 rtl:space-x-reverse">
+          <div
+            class="w-10 h-10 border-2 border-white rounded-full dark:border-gray-800"
+            style={{ backgroundColor: producto.Estilos.Background }}
+          ></div>
+          <div
+            class="w-10 h-10 border-2 border-white rounded-full dark:border-gray-800"
+            style={{ backgroundColor: producto.Estilos.Isologo }}
+          ></div>
+        </div>
 
-                </footer>
-                
-                
+        <footer class="flex gap-2 justify-between dark:text-white">
+          <div class="flex">
+            <Icons icon="typo" size="24" />
+            <div class="flex flex-col">
+              <span class="text-sm ms-2 opacity-50">Font Color</span>
+              <span class="text-md font-medium ms-2">
+                {producto.Estilos.Font}
+              </span>
+            </div>
+          </div>
+          <div class="flex">
+            <Icons icon="fill" size="24" />
+            <div class="flex flex-col">
+              <span class="text-sm ms-2 opacity-50">Logo cordobesa</span>
+              <span class="text-md font-medium ms-2">
+                {producto.Estilos.logoCordobesa}
+              </span>
+            </div>
+          </div>
+        </footer>
+      </article>
+    ))}
+  </ul>
 
-            </article>
-        ))}
+  <style>
+    .grid-autofill{
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    }
+  </style>
 
-    </ul>
-    
+  <script type="module">
+    const cards = document.querySelectorAll(".credit-card-selector");
+    const creditCard = document.querySelector("section#card-container credit-card");
 
+    cards.forEach(card => {
+      card.addEventListener("click", () => {
+        const bg = card.dataset.background;
+        const text = card.dataset.text;
+        const logo = card.dataset.logo;
+        const logoCordobesa = card.dataset.logoCordobesa;
 
-</Layout>
+        const event = new CustomEvent("update-card", {
+          detail: {
+            backgroundColor: bg,
+            textColor: text,
+            logoColor: logo,
+            logoCordobesa: logoCordobesa,
+          }
+        });
 
-<script type="module">
-  const creditCardSelector = document.querySelectorAll('.credit-card-selector');
-  const mainCard = document.getElementById('main-credit-card');
-  const logoCircle = document.getElementById('logo-circle');
-
-  creditCardSelector.forEach((card) => {
-    card.addEventListener('click', () => {
-      const bg = card.dataset.background;
-      const text = card.dataset.text;
-      const logo = card.dataset.logo;
-
-      // Cambiar estilos en la tarjeta principal
-      mainCard.style.backgroundColor = bg;
-      mainCard.style.color = text;
-      logoCircle.style.backgroundColor = logo;
+        window.dispatchEvent(event);
+      });
     });
-  });
-</script>
+  </script>
+</Layout>
