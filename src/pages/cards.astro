@@ -2,6 +2,7 @@
 import Layout from '@layouts/Layout.astro';
 import creditCards from '@data/cards.json';
 import CreditCardReact from '../components/CreditCard';// React version
+import Header from '@ui/Header.astro';// React version
 
 import Icons from "@icons/Icons.astro";
 
@@ -10,12 +11,7 @@ const primeraTarjeta = creditCards[0];
 ---
 
 <Layout>
-  <header class="mb-8">
-    <h1 class="text-2xl font-bold dark:text-white">Cards</h1>
-    <p class="text-sm text-gray-500 dark:text-gray-400">
-      Lista de tarjetas con sus estilos.
-    </p>
-  </header>
+  <Header Titulo="Cards" Description="Lista de tarjetas con sus estilos."/>
 
   <div class="flex flex-col-reverse md:grid grid-cols-2 gap-8">
 
