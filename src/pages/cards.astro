@@ -22,19 +22,23 @@ import Icons from "@icons/Icons.astro";
 
   <ul class="flex flex-col gap-4" id="cards-list">
     {creditCards.map((producto, index) => (
-      <article
-        class="credit-card-selector border p-3 flex flex-col gap-2 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700"
+      <button
+        class="credit-card-selector border p-3 flex justify-between items-center gap-2 rounded-lg shadow-md dark:text-white font-bold"
         data-product={JSON.stringify(producto)}
       >
-        <header class="flex">
-          <span class="text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm bg-[#CBED94] text-black">
-            {producto.Producto.Id}{producto.Producto.SubproductoId}
-          </span>
-          <h2 class="dark:text-white font-bold">
-            {producto.Producto.SubproductoNombre}
-          </h2>
-        </header>
-      </article>
+
+      <div>
+        <span class="text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm bg-[#CBED94] text-black">
+          {producto.Producto.Id}{producto.Producto.SubproductoId}
+        </span>
+          {producto.Producto.SubproductoNombre}
+      </div>
+
+            <Icons
+              icon="angle-small-right"/>
+
+
+      </button>
     ))}
   </ul>
 
@@ -59,17 +63,42 @@ import Icons from "@icons/Icons.astro";
 
 <script type="module">
   const cards = document.querySelectorAll(".credit-card-selector");
+  let selectedCard = null;
 
-  cards.forEach(card => {
-    card.addEventListener("click", () => {
-      const rawData = card.dataset.product;
-      const json = JSON.parse(rawData);
+  function selectCard(card) {
+    const rawData = card.dataset.product;
+    const json = JSON.parse(rawData);
 
-      const event = new CustomEvent("update-card", {
-        detail: json
-      });
-
-      window.dispatchEvent(event);
+    // Enviar evento a React
+    const event = new CustomEvent("update-card", {
+      detail: json
     });
+    window.dispatchEvent(event);
+
+    // Actualizar clase visual
+    if (selectedCard) {
+      selectedCard.classList.remove("selected");
+    }
+    card.classList.add("selected");
+    selectedCard = card;
+  }
+
+  // Listeners
+  cards.forEach(card => {
+    card.addEventListener("click", () => selectCard(card));
   });
+
+  // ✅ Seleccionar el primero automáticamente al cargar
+  if (cards.length > 0) {
+    selectCard(cards[0]);
+  }
 </script>
+
+
+
+<style>
+  .credit-card-selector.selected {
+    outline: 2px solid #4F46E5; /* Indigo */
+    background-color: rgba(79, 70, 229, 0.1);
+  }
+</style>

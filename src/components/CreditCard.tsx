@@ -1,14 +1,14 @@
 import { useEffect, useState, type SetStateAction } from 'react';
 
 interface Props {
-  SubproductoNombre: string;
-  backgroundColor: string;
-  textColor: string;
-  logoColor: string;
-  logoCordobesa: string;
-  id: string;
-  SubproductoId: string;
-  Marca: string
+  SubproductoNombre?: string;
+  backgroundColor?: string;
+  textColor?: string;
+  logoColor?: string;
+  logoCordobesa?: string;
+  id?: string;
+  SubproductoId?: string;
+  Marca?: string
 }
 
 const CreditCardReact = (props: Props) => {
