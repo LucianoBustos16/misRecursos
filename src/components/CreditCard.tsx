@@ -1,4 +1,4 @@
-import { useEffect, useState, type SetStateAction } from 'react';
+import { useEffect, useState } from 'react';
 
 interface Props {
   SubproductoNombre?: string;
@@ -8,11 +8,26 @@ interface Props {
   logoCordobesa?: string;
   id?: string;
   SubproductoId?: string;
-  Marca?: string
+  Marca?: string;
+}
+
+interface CardData {
+  Producto: {
+    Id: string;
+    SubproductoId: string;
+    SubproductoNombre: string;
+    Marca: string;
+  };
+  Estilos: {
+    Background: string;
+    Font: string;
+    Isologo: string;
+    logoCordobesa: string;
+  };
 }
 
 const CreditCardReact = (props: Props) => {
-  const [data, setData] = useState({
+  const buildInitialState = (): CardData => ({
     Producto: {
       Id: props.id || '',
       SubproductoId: props.SubproductoId || '',
@@ -27,22 +42,20 @@ const CreditCardReact = (props: Props) => {
     }
   });
 
+  const [data, setData] = useState<CardData>(buildInitialState);
+
   useEffect(() => {
     const handler = (event: Event) => {
-      const customEvent = event as CustomEvent<SetStateAction<{
-        Producto: { Id: string; SubproductoId: string; SubproductoNombre: string; Marca: string; };
-        Estilos: { Background: string; Font: string; Isologo: string; logoCordobesa: string; };
-      }>>;
+      const customEvent = event as CustomEvent<CardData>;
       setData(customEvent.detail);
     };
 
-    window.addEventListener('update-card', handler as EventListener);
-    return () => window.removeEventListener('update-card', handler as EventListener);
+    window.addEventListener('update-card', handler);
+    return () => window.removeEventListener('update-card', handler);
   }, []);
 
   const { Producto, Estilos } = data;
-
-  return (
+return (
     <>
       <div
         className="credit-card aspect-[1.586/1] max-w-sm p-6 rounded-xl shadow-md relative transition-all mx-auto overflow-hidden"
@@ -107,7 +120,7 @@ const CreditCardReact = (props: Props) => {
             </div>
 
             <div>
-              <span className="text-sm opacity-50">Marca</span>
+              <span className="text-sm opacity-50">Marca </span>
               <span className="text-md font-medium">
                 {Producto.Marca}
               </span>

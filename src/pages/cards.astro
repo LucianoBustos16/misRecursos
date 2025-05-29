@@ -4,6 +4,9 @@ import creditCards from '@data/cards.json';
 import CreditCardReact from '../components/CreditCard';// React version
 
 import Icons from "@icons/Icons.astro";
+
+
+const primeraTarjeta = creditCards[0];
 ---
 
 <Layout>
@@ -42,18 +45,19 @@ import Icons from "@icons/Icons.astro";
     ))}
   </ul>
 
-   <section  id="card-container" class="mb-8">
-    <CreditCardReact
-      id="Z"
-      SubproductoNombre="Cordobesa débito MasterCard"
-      backgroundColor="#CFCDBA"
-      textColor="#022321"
-      logoColor="#D9D8C8"
-      logoCordobesa="Color"
-      SubproductoId="2"
-      Marca="MasterCard"
-      client:load
-    />
+<CreditCardReact
+  id={primeraTarjeta.Producto.Id}
+  SubproductoId={String(primeraTarjeta.Producto.SubproductoId)}
+  SubproductoNombre={primeraTarjeta.Producto.SubproductoNombre}
+  Marca={primeraTarjeta.Producto.Marca}
+  backgroundColor={primeraTarjeta.Estilos.Background}
+  textColor={primeraTarjeta.Estilos.Font}
+  logoColor={primeraTarjeta.Estilos.Isologo}
+  logoCordobesa={primeraTarjeta.Estilos.logoCordobesa}
+  client:load
+/>
+
+
 
   </section>
 
