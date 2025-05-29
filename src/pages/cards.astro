@@ -14,29 +14,17 @@ import Icons from "@icons/Icons.astro";
     </p>
   </header>
 
-  <section  id="card-container" class="mb-8">
-    <CreditCardReact
-    cardType="visa"
-    cardNumber="1234 5678 9012 3456"
-    cardHolder="John Doe"
-    expirationDate="12/25"
-    backgroundColor="#1A1A1A"
-    textColor="#FFFFFF"
-    logoColor="#FFCC00"
-    logoCordobesa="Negativo"
-    client:visible
-    />
-  </section>
+  <div class="flex flex-col-reverse md:grid grid-cols-2 gap-8">
 
-  <ul class="grid grid-autofill gap-4" id="cards-list">
+
+
+ 
+
+  <ul class="flex flex-col gap-4" id="cards-list">
     {creditCards.map((producto, index) => (
       <article
         class="credit-card-selector border p-3 flex flex-col gap-2 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700"
-        data-index={index}
-        data-background={producto.Estilos.Background}
-        data-text={producto.Estilos.Font}
-        data-logo={producto.Estilos.Isologo}
-        data-cordobesa={producto.Estilos.logoCordobesa}
+        data-product={JSON.stringify(producto)}
       >
         <header class="flex">
           <span class="text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm bg-[#CBED94] text-black">
@@ -46,70 +34,42 @@ import Icons from "@icons/Icons.astro";
             {producto.Producto.SubproductoNombre}
           </h2>
         </header>
-
-        <div class="flex -space-x-4 rtl:space-x-reverse">
-          <div
-            class="w-10 h-10 border-2 border-white rounded-full dark:border-gray-800"
-            style={{ backgroundColor: producto.Estilos.Background }}
-          ></div>
-          <div
-            class="w-10 h-10 border-2 border-white rounded-full dark:border-gray-800"
-            style={{ backgroundColor: producto.Estilos.Isologo }}
-          ></div>
-        </div>
-
-        <footer class="flex gap-2 justify-between dark:text-white">
-          <div class="flex">
-            <Icons icon="typo" size="24" />
-            <div class="flex flex-col">
-              <span class="text-sm ms-2 opacity-50">Font Color</span>
-              <span class="text-md font-medium ms-2">
-                {producto.Estilos.Font}
-              </span>
-            </div>
-          </div>
-          <div class="flex">
-            <Icons icon="fill" size="24" />
-            <div class="flex flex-col">
-              <span class="text-sm ms-2 opacity-50">Logo cordobesa</span>
-              <span class="text-md font-medium ms-2">
-                {producto.Estilos.logoCordobesa}
-              </span>
-            </div>
-          </div>
-        </footer>
       </article>
     ))}
   </ul>
 
-  <style>
-    .grid-autofill{
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    }
-  </style>
+   <section  id="card-container" class="mb-8">
+    <CreditCardReact
+      id="Z"
+      SubproductoNombre="Cordobesa débito MasterCard"
+      backgroundColor="#CFCDBA"
+      textColor="#022321"
+      logoColor="#D9D8C8"
+      logoCordobesa="Color"
+      SubproductoId="2"
+      Marca="MasterCard"
+      client:load
+    />
 
-  <script type="module">
-    const cards = document.querySelectorAll(".credit-card-selector");
-    const creditCard = document.querySelector("section#card-container credit-card");
+  </section>
 
-    cards.forEach(card => {
-      card.addEventListener("click", () => {
-        const bg = card.dataset.background;
-        const text = card.dataset.text;
-        const logo = card.dataset.logo;
-        const logoCordobesa = card.dataset.logoCordobesa;
+  </div>
 
-        const event = new CustomEvent("update-card", {
-          detail: {
-            backgroundColor: bg,
-            textColor: text,
-            logoColor: logo,
-            logoCordobesa: logoCordobesa,
-          }
-        });
-
-        window.dispatchEvent(event);
-      });
-    });
-  </script>
 </Layout>
+
+<script type="module">
+  const cards = document.querySelectorAll(".credit-card-selector");
+
+  cards.forEach(card => {
+    card.addEventListener("click", () => {
+      const rawData = card.dataset.product;
+      const json = JSON.parse(rawData);
+
+      const event = new CustomEvent("update-card", {
+        detail: json
+      });
+
+      window.dispatchEvent(event);
+    });
+  });
+</script>

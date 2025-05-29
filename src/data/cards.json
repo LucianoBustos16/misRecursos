@@ -4,7 +4,8 @@
             "ClaseId": "S000C",
             "Id": "Z",
             "SubproductoId": 2,
-            "SubproductoNombre": "Cordobesa débito MasterCard"
+            "SubproductoNombre": "Cordobesa débito MasterCard",
+            "Marca": "MasterCard"
         },
         "Estilos":{
             "Font": "#022321",
@@ -18,12 +19,43 @@
             "ClaseId": "S000C",
             "Id": "Z",
             "SubproductoId": 1,
-            "SubproductoNombre": "Cordobesa MasterCard Internacional"
+            "SubproductoNombre": "Cordobesa MasterCard Internacional",
+            "Marca": "MasterCard"
         },
         "Estilos":{
             "Font": "#FFF",
             "Background": "#005F5A",
             "Isologo": "#20736F",
+            "logoCordobesa": "Negativo"
+        }
+    },
+        {
+        "Producto":{
+            "ClaseId": "S000C",
+            "Id": "L",
+            "SubproductoId": "C",
+            "SubproductoNombre": "Cordobesa Visa Internacional",
+            "Marca": "Visa"
+        },
+        "Estilos":{
+            "Font": "#FFF",
+            "Background": "#005F5A",
+            "Isologo": "#20736F",
+            "logoCordobesa": "Negativo"
+        }
+    },
+    {
+        "Producto":{
+            "ClaseId": "S000C",
+            "Id": "Z",
+            "SubproductoId": "4",
+            "SubproductoNombre": "Cordobesa Black",
+            "Marca": "MasterCard"
+        },
+        "Estilos":{
+            "Font": "#FFF",
+            "Background": "#1F140F",
+            "Isologo": "#322823",
             "logoCordobesa": "Negativo"
         }
     }
